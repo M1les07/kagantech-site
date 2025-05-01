@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'SF Pro Display', 'Segoe UI', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.light {
+  --bg-main: #fff;
+  --text-main: #000;
+  --accent: #8b4513;
+  --section-bg: rgba(210, 105, 30, 0.1); /* soft, translucent */
+}
+
+.dark {
+  --bg-main: #000;
+  --text-main: #fff;
+  --accent: #a0522d;
+  --section-bg: rgba(139, 69, 19, 0.15);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+.theme-toggle:active {
+  transform: scale(0.9); /* haptic-like tap feedback */
+}
+
+.cover-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.profile {
+  text-align: center;
+  background: var(--bg-main);
+  padding: 1rem;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: -50px;
+  border: 4px solid white;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-group {
+  margin-top: 1rem;
+}
+.btn-group button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn-group button:active {
+  transform: scale(0.96);
+}
+
+.about-section {
+  background: var(--section-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 3rem 1.5rem;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: 2rem 1rem;
+  transition: background 0.3s;
+}
+.about-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 28px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.about-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.about-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  color: inherit;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .btn-group button {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .about-section {
+    padding: 2rem 1rem;
+  }
+
+  .about-img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.watch-section,
+.contact-section {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--bg-main);
+}
+
+.watch-links,
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.watch-links a,
+.contact-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+
+.watch-links a:hover,
+.contact-links a:hover {
+  color: var(--accent);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-section {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  margin: 2rem;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(139, 69, 19, 0.1)
+  );
+}
+
+.contact-section h2 {
+  background: linear-gradient(90deg, var(--accent), #ff914d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.watch-section {
+  background: var(--section-bg);
+  padding: 3rem 1rem;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.watch-section::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.1), transparent 70%);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.watch-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.watch-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.watch-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.watch-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.light .watch-section {
+  background: var(--section-bg); /* already brown */
+  color: var(--text-main); /* ensures readable text */
+}
+
+.light .watch-section h2 {
+  color: var(--text-main);
+}
+
+.light .watch-item {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-main);
+}
+
+.light .watch-item:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* General animation setup */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add the fade-in-up animation to sections */
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Trigger the animation when the element enters view */
+.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  background: var(--section-bg); /* Matches the background style of the other sections */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-main);
+  font-family: 'Arial', sans-serif;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 1.5rem;
+  margin: 2rem 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-left, .footer-right {
+  flex: 1;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-icon {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+  background-color: #555;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.email-link {
+  color: var(--text-main);
+  font-size: 1rem;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.email-link:hover {
+  color: var(--accent);
+}
+
+hr {
+  border: 1px solid #444;
+  margin-top: 15px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+}
+
+.footer-left-bottom p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.terms-link {
+  color: var(--text-main);
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.terms-link:hover {
+  color: var(--accent);
+}
+
+/* Light Mode */
+.light footer {
+  background: var(--section-bg); /* Already translucent brown */
+  color: var(--text-main);
+}
+
+.light .social-icon {
+  background-color: #444;
+}
+
+.light .social-icon:hover {
+  background-color: #666;
+}
+
+.light .email-link {
+  color: var(--text-main);
+}
+
+.light .email-link:hover {
+  color: var(--accent);
+}
+
+.light .terms-link {
+  color: var(--text-main);
+}
+
+/* Dark Mode */
+.dark footer {
+  background: var(--section-bg); /* Already translucent brown */
+  color: var(--text-main);
+}
+
+.dark .social-icon {
+  background-color: #333;
+}
+
+.dark .social-icon:hover {
+  background-color: #555;
+}
+
+.dark .email-link {
+  color: var(--text-main);
+}
+
+.dark .email-link:hover {
+  color: var(--accent);
+}
+
+.dark .terms-link {
+  color: var(--text-main);
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KaganTech-Nigeria's Favorite Tech Content Creator</title>
+  <link rel="icon" href="assets/images/favicon.jpg" type="image/png">
+  <link rel="stylesheet" href="styles/main.css" />
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    /* Remove scrollbar */
+    body {
+      overflow-x: hidden;
+    }
+
+    .about-details {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+<body class="light">
+
+  <div class="theme-toggle" onclick="toggleTheme()">
+    <span id="theme-icon">☀️</span>
+  </div>      
+
+  <header class="hero">     
+    <img src="assets/images/cover.jpg" alt="Cover" class="cover-img" />
+  </header>
+
+  <section class="profile section fade-in-up">
+    <img src="assets/images/profile.jpg" alt="Kagan" class="profile-img" />
+    <h1>KaganTech</h1>
+    <p>Creator • Gamer • Tech Enthusiast</p>
+    <div class="btn-group">
+      <button class="about-btn">About</button>
+      <button class="contact-btn">Contact</button>
+    </div>
+  </section>
+
+  <section id="about" class="about-section fade-in-up">
+    <img src="assets/images/about.jpg" alt="Kagan" class="about-img" />
+    <h2>About Me</h2>
+    <p>
+      Hey, I'm <strong>Kagan</strong> — one of Nigeria’s most influential tech content creators. With over 12 years of experience in the tech space, I've built a name as a visionary creative known for making complex ideas feel simple through short, engaging video content.<br><br>
+      Beyond tech, I’ve recently jumped into the gaming scene, streaming titles like <strong>FC25</strong> and sharing the fun in real-time with my community. I’m also dabbling in music—crafting beats and exploring the art of sound, one layer at a time.<br><br>
+      Thanks for stopping by—maybe we’ll build something amazing together soon.
+    </p>
+    <div class="about-details">
+      <div class="detail-item">
+        <i data-feather="target" class="icon"></i>
+        <span class="label">Interests:</span> Technology
+      </div>
+      <div class="detail-item">
+        <i data-feather="gift" class="icon"></i>
+        <span class="label">Birthday:</span> 5th March
+      </div>
+    </div>
+  </section>  
+  
+  <section class="watch-section fade">
+    <h3>Watch My Content On</h3>
+    <div class="watch-links">
+      <a href="https://www.tiktok.com/@kagantech?lang=en" target="_blank">
+        <i data-feather="film" class="icon"></i> TikTok
+      </a>
+      <a href="https://www.youtube.com/@KaganTech" target="_blank">
+        <i data-feather="youtube" class="icon"></i> YouTube
+      </a>
+    </div>
+  </section>
+  
+  <section id="contact" class="contact-section fade-in-up">
+    <img src="assets/images/contact.jpg" alt="Kagan" class="about-img" style="margin-bottom: 1rem;" />
+    <h2>Contact Me</h2>
+    <h3>Let’s create the future</h3>
+    <p>I’m available for brand engagements and collaborations, and I’m excited to hear from you about new projects.</p>
+    <div class="contact-links">
+      <a href="mailto:business@kagan.tech" target="_blank">
+        <i data-feather="mail" class="icon"></i> business@kagan.tech
+      </a>
+      <a href="https://www.tiktok.com/@kagantech?lang=en" target="_blank">
+        <i data-feather="film" class="icon"></i> TikTok
+      </a>
+      <a href="https://www.instagram.com/kagantech" target="_blank">
+        <i data-feather="camera" class="icon"></i> Instagram
+      </a>
+      <a href="https://x.com/KaganTech" target="_blank">
+        <i data-feather="twitter" class="icon"></i> Twitter (X)
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=100085577438058" target="_blank">
+        <i data-feather="facebook" class="icon"></i> Facebook
+      </a>
+      <a href="https://www.youtube.com/@KaganTech" target="_blank">
+        <i data-feather="youtube" class="icon"></i> YouTube
+      </a>
+    </div>
+  </section>  
+
+  <footer>
+    <div class="footer-content fade-in-up">
+      <p>&copy; 2025 KaganTech. All rights reserved.</p>
+    </div>
+    <div class="footer-link">
+      <a href="#contact" class="terms-link">Terms and Conditions</a>
+    </div>
+  </footer>
+  
+  <p class="message">Written and designed with love from a follower: Miles</p>
+  
+  <script src="scripts/main.js"></script>
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>
