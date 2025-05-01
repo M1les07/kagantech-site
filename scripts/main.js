@@ -11,9 +11,26 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("theme-icon").textContent = "☀️";
   }
 
+  // Toggle theme when clicked
+  window.toggleTheme = function () {
+    const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
+
+    if (currentTheme === "dark") {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+      document.getElementById("theme-icon").textContent = "☀️";
+      localStorage.setItem("theme", "light");
+    } else {
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
+      document.getElementById("theme-icon").textContent = "🌙";
+      localStorage.setItem("theme", "dark");
+    }
+  };
+
   // Scroll to sections when clicking on buttons
-  const sections = document.querySelectorAll(".about-section, .watch-section, .contact-section");
-  
+  const sections = document.querySelectorAll(".about-section, .contact-section, .terms-section");
+
   function handleScroll() {
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
@@ -29,32 +46,38 @@ document.addEventListener("DOMContentLoaded", function () {
   // Select buttons to scroll to corresponding sections
   const aboutButton = document.querySelector(".about-btn");
   const contactButton = document.querySelector(".contact-btn");
-  const termsButton = document.querySelector(".terms-btn");
+  const termsButton = document.querySelector(".terms-link");
 
   // Smooth scroll to About Section
-  aboutButton.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(".about-section").scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+  if (aboutButton) {
+    aboutButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(".about-section").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
     });
-  });
+  }
 
   // Smooth scroll to Contact Section
-  contactButton.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(".contact-section").scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+  if (contactButton) {
+    contactButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(".contact-section").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
     });
-  });
+  }
 
-  // Smooth scroll to Terms and Conditions Section (adjust if necessary)
-  termsButton.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(".terms-section").scrollIntoView({
-      behavior: "smooth",
-      block: "start"
+  // Smooth scroll to Terms and Conditions Section
+  if (termsButton) {
+    termsButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      document.querySelector(".terms-section").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
     });
-  });
+  }
 });
